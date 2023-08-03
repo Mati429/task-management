@@ -1,0 +1,19 @@
+<div
+  class="px-4 py-3 task-container"
+  *ngFor="let task of tasks"
+  [class.completed]="task.completed"
+>
+  <div class="d-flex justify-content-between">
+    <ng-container *ngIf="!task.editing; else editTask">
+      <span>{{ task.title }}</span>
+    </ng-container>
+    <ng-template #editTask>
+      <input type="text" [(ngModel)]="task.title" (keydown.enter)="saveEditedTask(task)" />
+    </ng-template>
+    <div class="d-flex">
+      <div class="px-2" (click)="enableEditTask(task)"><i class="bi bi-pencil-square"></i></div>
+      <div (click)="deleteTask(task.id)"><i class="bi bi-trash"></i></div>
+      <div class="px-2" (click)="markTaskAsCompleted(task.id, task.completed)"><i class="bi bi-check2-circle"></i></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.task-add-form {
+  background-color: #F43336;
+
+  &-btn {
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      padding: 10px 50px;
+
+      &:hover {
+          background-color: white;
+          color: #F43336;
+      }
+  }
+}

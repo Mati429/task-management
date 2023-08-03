@@ -1,0 +1,22 @@
+.task-container {
+  cursor: pointer;
+  background-color: #EAEAEA;
+  transition: 0.5s;
+
+  &:nth-child(odd) {
+      background-color: #DDDDDD;
+  }
+
+  &:hover {
+      background-color: #c4c4c4;
+  }
+
+  &.completed {
+      background-color: #444444;
+      color: white;
+
+      span {
+          text-decoration: line-through;
+      }
+  }
+}
